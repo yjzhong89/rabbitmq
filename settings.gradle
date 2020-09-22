@@ -2,3 +2,5 @@ rootProject.name = 'rabbitmq'
 
 include "rabbitmq-consumer"
 include "rabbitmq-producer"
+include "rabbitmq-springboot"
+include "rabbitmq-springboot-consumer"
