@@ -22,4 +22,17 @@ public class ProducerTest {
     public void testSend() {
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "code.rabbit", "hello rabbitmq springboot");
     }
+
+    @Test
+    public void testTTLSend() {
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "code.rabbit", "hello rabbitmq springboot", message -> {
+            message.getMessageProperties().setExpiration("10000");
+            return message;
+        });
+    }
+
+    @Test
+    public void testDLXSend() {
+        rabbitTemplate.convertAndSend(RabbitMQConfig.TEST_DLX_EXCHANGE_NAME, "test.dlx.test", "hello rabbitmq springboot");
+    }
 }

@@ -5,3 +5,8 @@ spring:
     username: test
     password: test
     virtual-host: /test
+    listener:
+      simple:
+        acknowledge-mode: manual
+        prefetch: 1
+

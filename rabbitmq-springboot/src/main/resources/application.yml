@@ -5,3 +5,5 @@ spring:
     username: test
     password: test
     virtual-host: /test
+    publisher-confirm-type: correlated
+    publisher-returns: true
